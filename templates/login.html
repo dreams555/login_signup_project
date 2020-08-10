@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 액션화면 -->
+    <h1>로그인 페이지 입니다.</h1>
+    
+    <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        ID :
+        <input type="text" name="ID"><br>
+        Password :
+        <input type="password" name="PW" ><br>
+        <input type="submit" value="로그인하기" ><br>
+    </form>
+    <a href="{% url 'home'%}">home으로 돌아가기</a>
+    <p style="color:red;">{{error}}</p>
+</body>
+</html>
+

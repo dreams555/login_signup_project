@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 로그인 됐을때 나오는것 -->
+    <!--% if user.is_authenticated % 로그인 정보있으면 참 아니면 거짓  -->
+    {% if user.is_authenticated %}
+    <p style="font-size: large;">{{user.username}}님 환영합니다<!DOCTYPE html></p>
+    <a href="{% url 'logout' %}">로그아웃하기</a>
+    <br>
+    <!-- 로그인 안했을때 나오는 것 -->
+    {% else %}
+    <a href="{% url 'login' %}">로그인 페이지로 이동</a>
+    <a href="{% url 'signup' %}">회원가입 페이지로 이동</a>
+    {% endif %}
+</body>
+</html>

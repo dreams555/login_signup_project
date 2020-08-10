@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- id, password 2번 입력  -->
+    <h1>회원가입 페이지 입니다.</h1>
+    <form method="POST" action="">
+        {% csrf_token %}
+        ID :
+        <input type="text" name="ID"><br>
+        PW :
+        <input type="password" name="PW1"><br>
+        PW확인 :
+        <input type="password" name="PW2"><br>
+        <br>
+        <input type="submit" value="회원가입하기">
+    </form>
+    <p>{{error}}</p>
+    <a  href="{% url 'home' %}">home으로 돌아가기</a>
+</body>
+</html>
